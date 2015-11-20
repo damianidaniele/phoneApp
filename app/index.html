@@ -57,7 +57,7 @@
       </div>
     </div>
 
-
+    <script src="/bower_components/socket.io-client/dist/socket.io.js"></script>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -72,12 +72,14 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <script src="/socket.io/socket.io.js"></script>
-
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/settings/settings.js"></script>
+        <script src="scripts/factories/socket.js"></script>
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/chat.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/directives/chat-button.js"></script>
+        <script src="scripts/directives/chat-log.js"></script>
         <!-- endbuild -->
 </body>
 </html>

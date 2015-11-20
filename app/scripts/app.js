@@ -8,14 +8,15 @@
  *
  * Main module of the application.
  */
-angular
-  .module('phoneappApp', [
+angular.module('phoneappApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'appSettings',
+    'socket.io'
   ])
   .config(function ($routeProvider) {
     $routeProvider
