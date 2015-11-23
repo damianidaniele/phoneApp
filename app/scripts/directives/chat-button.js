@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('phoneappApp')
+angular.module('phoneApp')
   .directive('chatButton', function () {
     return {
       restrict: 'EA',

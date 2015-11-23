@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('phoneappApp')
+angular.module('phoneApp')
   .controller('AboutCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular.module('phoneappApp', [
+angular.module('phoneApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',

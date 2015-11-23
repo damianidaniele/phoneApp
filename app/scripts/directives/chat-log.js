@@ -1,17 +1,19 @@
 'use strict';
 
-angular.module('phoneappApp')
+angular.module('phoneApp')
   .directive('chatLog', function () {
     return {
       restrict: 'EA',
-      template: '<span>{{lastMessage}}</span>',
-      controller: ['$scope', 'socket', function ($scope, socket) {
+      templateUrl: '/templates/chat-log.html',
+      controller: ['$scope', function ($scope) {
 
-        socket.on('message', function (data) {
-          console.log('data: ', data);
-          $scope.chatLog.push(data);
-        });
-
+        $scope.$watchCollection(
+          function() {
+            return $scope.chatLog;
+          },
+          function(data){
+            $scope.chat = data;
+          });
       }]
     };
   });
