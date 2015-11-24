@@ -121,6 +121,57 @@ body {
   }
 }
 
+.navbar-container {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+
+  ul {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .navbar {
+    list-style: none;
+    padding: 0;
+    display: table-row;
+
+    & > li {
+      display: table-cell;
+      background: orange;
+      text-align: center;
+      padding: 5px 0;
+      position: relative;
+      z-index: 10;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+
+      &.active {
+
+        &::before {
+          background: rgba(255, 0, 0, 0.6);
+          animation: blinker 2s linear infinite;
+        }
+      }
+    }
+  }
+}
+
+@keyframes blinker {
+  50% { opacity: 0.0; }
+}
+
+
 
 
 

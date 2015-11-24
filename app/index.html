@@ -19,26 +19,12 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="#/">phoneapp</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Chat</a></li>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="navbar-container">
+            <ul class="navbar">
+              <li blinking><a href="#/">Chat</a></li>
               <li><a ng-href="#/photos">Photos</a></li>
               <li><a ng-href="#/settings">Settings</a></li>
             </ul>
@@ -47,8 +33,9 @@
       </div>
     </div>
 
+
     <div class="container">
-    <div ng-view=""></div>
+      <div ng-view=""></div>
     </div>
 
     <div class="footer">
@@ -80,6 +67,7 @@
         <script src="scripts/controllers/chat.js"></script>
         <script src="scripts/controllers/photos.js"></script>
         <script src="scripts/controllers/settings.js"></script>
+        <script src="scripts/directives/blinking.js"></script>
         <script src="scripts/directives/chat-button.js"></script>
         <script src="scripts/directives/chat-log.js"></script>
         <script src="scripts/filters/extract.js"></script>
