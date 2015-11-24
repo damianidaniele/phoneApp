@@ -9,11 +9,10 @@ angular.module('appSettings',[])
       if (!generated) {
         return 'user' + Math.floor(Math.random()*100 + 1);
       }
-      return username
+      return userName;
     };
 
     var userName = userNameGenerator();
-
 
     return {
       server: 'http://185.13.90.140:8081',
