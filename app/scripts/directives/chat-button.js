@@ -6,7 +6,7 @@ angular.module('phoneApp')
       restrict: 'EA',
       replace: true,
       templateUrl: '/templates/chat-button.html',
-      controller: ['$scope', 'socket', function ($scope, socket) {
+      controller: ['$scope', function ($scope) {
 
         $scope.send = function(){
           event.preventDefault();
