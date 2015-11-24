@@ -1,26 +1,16 @@
 'use strict';
 
 angular.module('phoneApp')
-  .controller('ChatCtrl', ['$scope', '$filter', 'socket', 'settings', function ($scope, $filter, socket, settings) {
-
-    var chatLine = {};
+  .controller('ChatCtrl', ['$scope', 'ChatService', 'settings', function ($scope, ChatService, settings) {
 
     $scope.currentUser = settings.userName();
-    $scope.chatLog = [];
+
+    ChatService.getMessages($scope.currentUser);
+
+    $scope.chatLog = ChatService.chatLog;
 
     $scope.sendMessage = function(message) {
-      $scope.chatLog.push({ method: 'sent', user: '', message: message});
-      socket.emit('message', { user: $scope.currentUser, message: message});
+      ChatService.newMessage($scope.currentUser, message);
     };
-
-    socket.on('message', function (data) {
-      console.log('data: ', data);
-      chatLine.method = 'received';
-      chatLine.user = $filter('extract')(data.message, 'user', $scope.currentUser);
-      chatLine.message = $filter('extract')(data.message, 'message', $scope.currentUser);
-      $scope.chatLog.push(chatLine);
-      chatLine = {};
-      console.log('test', $scope.chatLog);
-    });
 
   }]);

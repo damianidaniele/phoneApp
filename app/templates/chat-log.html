@@ -1,5 +1,5 @@
 <div class="chat-area">
   <div class="chat-line" ng-repeat="line in chat track by $index" ng-class="{'user-current': line.method === 'sent', 'user-other': line.method === 'received'}">
-    <span >{{line.user}}</span> <span>{{line.message}}</span>
+    <span>{{line.user}}</span> <span>{{line.message}}</span>
   </div>
 </div>

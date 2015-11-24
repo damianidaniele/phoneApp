@@ -31,5 +31,5 @@ angular.module('phoneApp')
       if(mode === 'message') {
         return getUser() === currentUser ? '' : getMessage();
       }
-    }
+    };
   });
