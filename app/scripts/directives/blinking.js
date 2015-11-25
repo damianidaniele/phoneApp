@@ -11,33 +11,28 @@ angular.module('phoneApp')
       },
       replace: true,
       transclude: true,
-      templateUrl: '/templates/nav-bar.html',
+      templateUrl: '/templates/blinking.html',
       link: function(scope, elements, attrs, controller, transclude) {
         transclude(function(transcludeEl){
           scope.linkPath = $(transcludeEl).first().attr('href');
           scope.linkValue = $(transcludeEl).first().html();
         });
       },
-      controller: ['$scope', 'ChatService', function ($scope, ChatService) {
-        console.log(1, $scope.anchor);
+      controller: ['$scope', '$element', 'ChatService', function ($scope, $element, ChatService) {
 
-        $scope.chatLog = ChatService.chatLog;
-        $scope.getAttention = false;
+        $scope.isThereANewMessage = false;
 
         $scope.$watchCollection(
           function() {
             return $scope.chatLog;
           },
           function(data){
-            $scope.getAttention = true;
+            $scope.isThereANewMessage = !($element.hasClass('active')) && data;
           }
         );
 
-        $scope.viewContent = function() {
-          if ($scope.getAttention) {
-            $scope.getAttention = false;
-          }
-        };
+        $scope.chatLog = ChatService.chatLog;
+
       }]
     };
   });
