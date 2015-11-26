@@ -8,7 +8,7 @@ angular.module('phoneApp')
       templateUrl: '/templates/chat-button.html',
       controller: ['$scope', function ($scope) {
 
-        var inputArea = $("[name='message']");
+        var inputArea = $('[name="message"]');
 
         $(inputArea).focus();
 
