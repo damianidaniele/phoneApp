@@ -16,7 +16,7 @@
     "angular-mocks": "^1.4.0"
   },
   "appPath": "app",
-  "moduleName": "phoneappApp",
+  "moduleName": "phoneApp",
   "overrides": {
     "bootstrap": {
       "main": [
